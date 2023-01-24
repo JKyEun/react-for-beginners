@@ -11,26 +11,44 @@
 </body>
 <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
     const root = document.getElementById('root');
-    const h3 = React.createElement(
-        'h3',
-        null,
-        "Hi, it's title"
+    const Title = () => (
+        <h3>Hi, it's title</h3>
     );
-    const btn = React.createElement(
-        'button',
-        {
-        onClick: () => console.log('clicked!'),
-        onMouseEnter: () => console.log('entered!')
-        },
-        'click me!'
+    // const h3 = React.createElement(
+    //     'h3',
+    //     null,
+    //     "Hi, it's title"
+    // );
+    const Button = () => (
+        <button
+            onClick={() => console.log('clicked!')} 
+            onMouseEnter={() => console.log('entered!')}
+        >
+            click me!
+        </button>
     );
-    const container = React.createElement(
-        'div',
-        null,
-        [h3, btn]
+    // const btn = React.createElement(
+    //     'button',
+    //     {
+    //     onClick: () => console.log('clicked!'),
+    //     onMouseEnter: () => console.log('entered!')
+    //     },
+    //     'click me!'
+    // );
+    const Container = () => (
+        <div>
+            <Title />
+            <Button />
+        </div>
     );
-    ReactDOM.render(container, root);
+    // const container = React.createElement(
+    //     'div',
+    //     null,
+    //     [Title, Button]
+    // );
+    ReactDOM.render(<Container />, root);
 </script>
 </html>
