@@ -1,0 +1,1 @@
+[코드 설명 및 공부 기록 노션 페이지](https://synonymous-island-173.notion.site/React-for-beginners-2a7feb0d7611488d973bb427b25a6bc2)
