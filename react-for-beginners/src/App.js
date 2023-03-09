@@ -1,28 +1,23 @@
-import Button from './Button';
-import styles from './App.module.css';
 import { useState, useEffect } from 'react';
 
 function App() {
-  const [counter, setValue] = useState(0);
-  const [keyword, setKeyword] = useState('');
-  const onClick = () => setValue((prev) => prev + 1);
-  const onChange = (e) => setKeyword(e.target.value);
-
-  useEffect(() => {
-    console.log(`Keyword Changes! ${keyword}`);
-  }, [keyword]);
-  useEffect(() => {
-    console.log(`Counter Changes! ${counter}`);
-  }, [counter]);
-  useEffect(() => {
-    console.log(`Keyword or Counter Changes!`);
-  }, [keyword, counter]);
-
+  function Hello() {
+    useEffect(() => {
+      console.log('Hi :)');
+      return () => {
+        console.log('Bye :(');
+      };
+    }, []);
+    return <h1>Hello!</h1>;
+  }
+  const [showing, setShowing] = useState(false);
+  const onClick = () => {
+    setShowing((prev) => !prev);
+  };
   return (
     <div>
-      <input type='text' onChange={onChange} />
-      <h1>{counter}</h1>
-      <button onClick={onClick}>Click Me!</button>
+      <button onClick={onClick}>{showing ? 'Hide' : 'Show'}</button>
+      {showing ? <Hello /> : null}
     </div>
   );
 }
