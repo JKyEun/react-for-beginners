@@ -16,7 +16,7 @@ function App() {
     setTodos((currentArr) => {
       currentArr.splice(index, 1);
       return [...currentArr];
-    })
+    });
   };
   return (
     <div>
