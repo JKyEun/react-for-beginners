@@ -23,6 +23,7 @@ function Home() {
       ) : (
         movies.map((el) => (
           <Movie
+            key={el.id}
             coverImage={el.medium_cover_image}
             title={el.title}
             summary={el.summary}
