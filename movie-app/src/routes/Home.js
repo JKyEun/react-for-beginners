@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Movie from '../components/movie';
+import Movie from '../components/Movie';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -24,6 +24,7 @@ function Home() {
         movies.map((el) => (
           <Movie
             key={el.id}
+            id={el.id}
             coverImage={el.medium_cover_image}
             title={el.title}
             summary={el.summary}
